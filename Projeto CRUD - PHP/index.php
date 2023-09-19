@@ -11,6 +11,11 @@
 
 <body>
     <div class="container">
+        <?php if (!empty($_GET['msgErro'])) { ?>
+            <div class="alert alert-warning" role="alert">
+                <?php echo $_GET['msgErro']; ?>
+            </div>
+        <?php } ?>
         <h1>Olá, seja bem-vindo!</h1>
         <form action="processa_login.php" method="post">
             <div class="col-4">
@@ -26,6 +31,10 @@
             <button type="submit" name="enviarDados" class="btn btn-primary">Entrar</button>
             <a href="cad_usuario.php" class="btn btn-warning">Cadastrar-se</a>
         </form>
+        <div class="alert alert-success" role="alert">
+            <?php echo $_GET['msgSucesso']; ?>
+        </div>
+        <?php ?>
     </div>
 </body>
 
